@@ -1,8 +1,5 @@
-<<<<<<< HEAD
+
 import sys, pygame, requests, json, random
-=======
-import sys, pygame, requests, json, random
->>>>>>> 5b59797be79ea781615951b1d6480cc4c848ba14
 from brick import Brick
 from brick import Player
 
