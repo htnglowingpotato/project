@@ -1,4 +1,5 @@
-# We wanted to learn Python and we are highly political (sorry if you are genuinely a Trump supporter). Why not learn by using the Pygame library to build a basic game, and do some sentiment analysis of his tweets to determine how bullshitty they are?
+# Bullshit Breaker
+## We wanted to learn Python and we are highly political (sorry if you are genuinely a Trump supporter). Why not learn by using the Pygame library to build a basic game, and do some sentiment analysis of his tweets to determine how bullshitty they are?
 ## What it does
 You play a **basic brickbreaker game** with **Donald Trump's head** as the ball and a word of his **bullshittiest tweets** as the bricks!
 ## How I built it
