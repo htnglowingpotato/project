@@ -57,12 +57,13 @@ ballrect.y = 400
 
 #string to text
 
-test_string1 = "Never met but never liked dopey Robert Gates. Look at the mess the U.S. is in. Always speaks badly of his many bosses, including Obama."
-
-def get_tweet:
+def get_tweet():
 	url = 'https://hackthenorth-b9b85.firebaseio.com/negtweets.json?auth=k8oUcZFSAcbBZpHcQkyTPeepFj8ckSG4zQcp1tme&print=pretty'
 	response = requests.get(url)
-	return json.loads(response.text)[random.choice(json.loads(response.text).keys())]['message']
+	return json.loads(response.text)[random.choice(list(json.loads(response.text).keys()))]['message']
+
+test_string1 = get_tweet()
+print(test_string1)
 
 #string to text
 block_words = []
