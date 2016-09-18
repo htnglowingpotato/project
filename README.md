@@ -1,5 +1,11 @@
 # Bullshit Breaker
 ## We wanted to learn Python and we are highly political (sorry if you are genuinely a Trump supporter). Why not learn by using the Pygame library to build a basic game, and do some sentiment analysis of his tweets to determine how bullshitty they are?
+## How to play
+Please download Python 3.5 here if you don't have it already! - https://www.python.org/
+We also recommend getting pip3 to download all the necessary requirements to play the game.
+Type this in the command line: sudo python3 get-pip.py
+Then type this: [(sudo) -< optional] pip3 install requirements.txt
+You should be good to go!
 ## What it does
 You play a **basic brickbreaker game** with **Donald Trump's head** as the ball and a word of his **bullshittiest tweets** as the bricks!
 ## How I built it
@@ -11,9 +17,9 @@ You play a **basic brickbreaker game** with **Donald Trump's head** as the ball 
 -Downloading python packages sucks
 -Libraries are outdated
 -Sentiment analysis is highly complicated
-## Accomplishments that I'm proud of
+## Accomplishments that We're proud of
 -We were able to produce a game, use the Twitter API, do basic sentiment analysis, and use the Firebase API all using Python - not bad !
-## What I learned
+## What We learned
 -Pygame library is not as cool as we thought, but still easy to use and a lot of documentation
 -Sentiment analysis is highly nuanced
 -We want to learn more about databases ...
