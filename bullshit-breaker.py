@@ -1,4 +1,3 @@
-
 import sys, pygame, requests, json, random
 from brick import Brick
 from brick import Player
@@ -7,7 +6,7 @@ from brick import Player
 #   	Constants		#
 #***********************#
 
-#screen 
+#screen
 WIDTH = 640
 HEIGHT = 480
 
@@ -36,14 +35,14 @@ PLAYER_HEIGHT = 20
 pygame.init()
 screen = pygame.display.set_mode((640,480),pygame.RESIZABLE)
 
-#make 4x7 2D list of bricks 
+#make 4x7 2D list of bricks
 bricks = []
 for i in range(4):
 	bricks.append([])
 
 for i in range(4):
 	for j in range(7):
-		bricks[i].append(Brick(10+j*(BRICK_WIDTH+10), 10+i*(BRICK_HEIGHT+10), False))	
+		bricks[i].append(Brick(10+j*(BRICK_WIDTH+10), 10+i*(BRICK_HEIGHT+10), False))
 
 #make player
 player = Player(260, 440, 5)
@@ -99,7 +98,7 @@ while 1:
 		ballrect.y = 390
 		player.x = 260
 		player.y = 440
-	
+
 	#key controls
 	keys = pygame.key.get_pressed()
 	if keys[pygame.K_LEFT] and (player.x>=10):
@@ -116,9 +115,9 @@ while 1:
 	if ballrect.left < 0 or ballrect.right > WIDTH:
 		speed[0] = -speed[0]
 	if ballrect.top < 0:
-		speed[1] = -speed[1]	
+		speed[1] = -speed[1]
 
-	screen.blit(ball, ballrect)	
+	screen.blit(ball, ballrect)
 
 
 	#add bricks
@@ -126,7 +125,7 @@ while 1:
 		for j in range(7):
 			if bricks[i][j].isHit == False:
 				pygame.draw.rect(screen, BRICK_COLOR, (bricks[i][j].x,bricks[i][j].y,BRICK_WIDTH,BRICK_HEIGHT), 0)
-	
+
 	#font
 	myfont = pygame.font.SysFont("monospace", 16)
 	for i in range(4):
@@ -142,7 +141,7 @@ while 1:
 				bricks[i][j].text = ""
 
 	#see if any cubes are left
-	
+
 	count = len(list(filter(lambda x: not x.isHit, bricks[0])))+len(list(filter(lambda x: not x.isHit, bricks[1])))+len(list(filter(lambda x: not x.isHit, bricks[2])))+len(list(filter(lambda x: not x.isHit, bricks[3])))
 
 	if count == 0:
@@ -156,7 +155,6 @@ while 1:
 		hasStarted = False
 	if lives == 0:
 		sys.exit()
-	
+
 	pygame.display.flip()
 	pygame.display.update()
-	
