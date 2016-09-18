@@ -18,6 +18,7 @@ BRICK_HEIGHT = 40
 BRICK_COLOR = (204,0,0)
 PLAYER_COLOR = (200,100,0)
 BLACK = (0,0,0)
+FONT_COLOR = (255,255,0)
 
 #ball
 speed = [7, -7]
@@ -34,12 +35,12 @@ PLAYER_HEIGHT = 20
 pygame.init()
 screen = pygame.display.set_mode((640,480),pygame.RESIZABLE)
 
-#make 3x7 2D list of bricks 
+#make 4x7 2D list of bricks 
 bricks = []
-for i in range(3):
+for i in range(4):
 	bricks.append([])
 
-for i in range(3):
+for i in range(4):
 	for j in range(7):
 		bricks[i].append(Brick(10+j*(BRICK_WIDTH+10), 10+i*(BRICK_HEIGHT+10), False))	
 
@@ -67,6 +68,10 @@ def split_string(text):
 
 split_string(test_string1)
 
+for i in range(4):
+	for j in range(7):
+		if(len(block_words)>(7*i+j)):
+			bricks[i][j].text = block_words[7*i+j]
 
 
 lives = 3
@@ -111,22 +116,20 @@ while 1:
 
 
 	#add bricks
-	for i in range(3):
+	for i in range(4):
 		for j in range(7):
 			if bricks[i][j].isHit == False:
 				pygame.draw.rect(screen, BRICK_COLOR, (bricks[i][j].x,bricks[i][j].y,BRICK_WIDTH,BRICK_HEIGHT), 0)
 	
 	#font
-	myfont = pygame.font.SysFont("monospace", 20)
-	for i in range(3):
+	myfont = pygame.font.SysFont("monospace", 16)
+	for i in range(4):
 		for j in range(7):
-			label = myfont.render(block_words[7*i+j], 1, (255,255,0))
+			label = myfont.render(bricks[i][j].text, 1, FONT_COLOR)
 			screen.blit(label, (bricks[i][j].x,bricks[i][j].y))
 
-
-
 	#intersection testing
-	for i in range(3):
+	for i in range(4):
 		for j in range(7):
 			if pygame.Rect(bricks[i][j].x,bricks[i][j].y,BRICK_WIDTH,BRICK_HEIGHT).colliderect(ballrect):
 				bricks[i][j].isHit = True
@@ -134,7 +137,7 @@ while 1:
 
 	#see if any cubes are left
 	
-	count = len(list(filter(lambda x: not x.isHit, bricks[0])))+len(list(filter(lambda x: not x.isHit, bricks[1])))+len(list(filter(lambda x: not x.isHit, bricks[2])))
+	count = len(list(filter(lambda x: not x.isHit, bricks[0])))+len(list(filter(lambda x: not x.isHit, bricks[1])))+len(list(filter(lambda x: not x.isHit, bricks[2])))+len(list(filter(lambda x: not x.isHit, bricks[3])))
 
 	if count == 0:
 		sys.exit()
