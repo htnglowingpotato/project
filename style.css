@@ -1,0 +1,17 @@
+body {
+  font-family: monospace;
+  text-align: center;
+  color: #c86400;
+}
+
+h1 {
+  font-size: 45px;
+}
+
+a {
+  color: black;
+}
+
+a: hover {
+  color: (255,255,0);
+}
