@@ -1,4 +1,4 @@
-import sys, pygame
+import sys, pygame, random
 from brick import Brick
 from brick import Player
 
