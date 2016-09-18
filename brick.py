@@ -8,6 +8,7 @@ class Brick:
 		self.x = x
 		self.y = y
 		self.isHit = isHit
+		self.text = "Fuck"
 		Brick.brick_count+=1
 
 class Player:
